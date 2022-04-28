@@ -25,6 +25,6 @@ Route::get('bolsa/{bolsa}',function($bolsa){
     return "Bienvenido a la bolsa: $bolsa";
 });
 
-Route::get('users/{id}', function ($id) {
-    
+Route::get('bolsa/{test}', function ($test) {
+    return "Esto es un Test de Push: $test";
 });
