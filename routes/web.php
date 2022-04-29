@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BolsaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
 
 Route::get('bolsa',function(){
     return "Bienvenido a Bolsa de Trabajo";
@@ -29,11 +28,11 @@ Route::get('bolsa/{bolsa}',function($bolsa){
     return "Bienvenido a la bolsa de empleo: $bolsa";
 });
 
-Route::get('bolsa/{bolsa}/{categoria?}', function ($bolsa, $categoria = null) {
+/*Route::get('bolsa/{bolsa}/{categoria?}', function ($bolsa, $categoria = null) {
     if($categoria){
         return "Bienvenido a la bolsa de empleo $bolsa, de la categoria $categoria";
     }else{
         return "Bienvenido a la bolsa: $bolsa";
     }
     
-});
+});*/
