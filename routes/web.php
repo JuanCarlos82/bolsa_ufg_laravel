@@ -21,10 +21,19 @@ Route::get('bolsa',function(){
     return "Bienvenido a Bolsa de Trabajo";
 });
 
-Route::get('bolsa/{bolsa}',function($bolsa){
-    return "Bienvenido a la bolsa: $bolsa";
+Route::get('bolsa/create', function () {
+    return "En esta pagina podas crear la bolsa de trabajo";
 });
 
-Route::get('bolsa/{test}', function ($test) {
-    return "Esto es un Test de Push: $test";
+Route::get('bolsa/{bolsa}',function($bolsa){
+    return "Bienvenido a la bolsa de empleo: $bolsa";
+});
+
+Route::get('bolsa/{bolsa}/{categoria?}', function ($bolsa, $categoria = null) {
+    if($categoria){
+        return "Bienvenido a la bolsa de empleo $bolsa, de la categoria $categoria";
+    }else{
+        return "Bienvenido a la bolsa: $bolsa";
+    }
+    
 });
