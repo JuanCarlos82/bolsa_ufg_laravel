@@ -28,6 +28,10 @@ Route::get('bolsa/{bolsa}',function($bolsa){
     return "Bienvenido a la bolsa de empleo: $bolsa";
 });
 
+route::get('bolsa',[BolsaController::class, 'index']);
+route::get('bolsa/create',[BolsaController::class, 'create']);
+route::get('bolsa/{bolsa}',[BolsaController::class, 'show']);
+
 /*Route::get('bolsa/{bolsa}/{categoria?}', function ($bolsa, $categoria = null) {
     if($categoria){
         return "Bienvenido a la bolsa de empleo $bolsa, de la categoria $categoria";
